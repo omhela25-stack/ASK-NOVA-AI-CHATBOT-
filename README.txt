@@ -1,24 +1,24 @@
-NOVA AI FRONTEND
+NOVA AI FRONTEND — MATCHED TO YOUR ORIGINAL STREAMLIT SCREENSHOTS
 
-This is a static frontend designed to match the two NOVA AI screenshots:
-- Dark silver/black abstract liquid background
-- Blue/purple translucent welcome panel
-- Name entry screen
-- Left NOVA AI sidebar with the same model labels and controls
-- Main chat area, voice recording/transcription, and speech playback
+This version uses your supplied nova_background.jpeg (not a newly generated substitute).
+It recreates the two original screens:
+1) Welcome/name-entry screen.
+2) Main NOVA AI chat screen with left sidebar, model cards, welcome hero,
+   Learn something / Build something prompts, composer, microphone and send button.
 
-DEPLOY TO CLOUDFLARE PAGES
-1. Upload these files to your nova-ai-frontend GitHub repository (keep index.html, style.css, script.js and nova-background.png in the repository root).
-2. In Cloudflare Pages, connect that repository.
-3. Framework preset: None. Build command: leave blank. Build output directory: / (or . if the UI requires it).
-4. Deploy.
+Files:
+- index.html
+- style.css
+- script.js
+- nova-background.jpeg
 
-CONNECT THE BACKEND
-1. Deploy the FastAPI backend separately using the backend starter package.
-2. Set GROQ_API_KEY in the backend host's environment variables.
-3. Open the deployed Pages website and click the small gear icon at bottom-right.
-4. Enter the backend base URL (example: https://your-api-host.example.com), without /chat or /health, then save.
+Deploy on Cloudflare Pages:
+- Connect your nova-ai-frontend GitHub repository.
+- Framework preset: None
+- Build command: leave blank
+- Build output directory: /
 
-IMPORTANT
-The API key belongs only in the backend environment variables. Never put GROQ_API_KEY in these frontend files.
-Voice recording requires microphone permission and HTTPS. Voice transcription uses the backend /transcribe endpoint.
+Important:
+The frontend needs your separately deployed FastAPI backend. Click the gear button
+in the lower-right corner after deployment and enter the backend URL.
+Do not put your Groq API key in frontend files.

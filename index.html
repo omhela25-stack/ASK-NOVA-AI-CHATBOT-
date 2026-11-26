@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#05070d" />
+  <title>NOVA AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="backdrop"></div>
+  <section id="onboarding" class="onboarding">
+    <div class="welcome-card">
+      <h1>✦ Welcome to NOVA AI</h1>
+      <p>Your personal AI assistant. Enter your name to get started.</p>
+    </div>
+    <form id="name-form" class="name-form">
+      <label for="name-input">What should NOVA call you?</label>
+      <input id="name-input" maxlength="80" placeholder="Enter your name..." autocomplete="given-name" required />
+      <button class="gradient-button enter-button" type="submit">Enter NOVA AI 🚀</button>
+    </form>
+  </section>
+
+  <div id="app" class="app-shell hidden">
+    <aside class="sidebar">
+      <div class="brand">✦ NOVA AI</div>
+      <div class="eyebrow">YOUR PERSONAL AI SPACE</div>
+      <h3 id="sidebar-greeting">Welcome 👋</h3>
+      <p class="muted">Built by Om Hela</p>
+      <div class="side-divider"></div>
+      <h3 class="section-label">🧠 AI Models</h3>
+      <div class="model-card general"><span>GPT-OSS 120B · General AI</span></div>
+      <div class="model-card coding"><span>Qwen · Coding AI</span></div>
+      <div class="side-divider lower"></div>
+      <button id="new-chat" class="gradient-button side-button">＋ New Chat</button>
+      <button id="change-name" class="gradient-button side-button">✎ Change Name</button>
+      <div class="system-info">
+        <h3>⚙️ System</h3>
+        <p>Engine: Groq</p><p>Connection: Cloud API</p><p>Mode: Automatic selection</p>
+      </div>
+      <div class="sidebar-footer">NOVA AI · Crafted by Om Hela</div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="hero main-hero">
+        <h1>✦ NOVA AI</h1>
+        <p>Your intelligent workspace. Ask anything, create anything.</p>
+      </header>
+      <section id="empty-state" class="empty-state">
+        <h2>What can I help you with today?</h2>
+        <div class="suggestions">
+          <button class="suggestion" data-prompt="Teach me an interesting concept in AI."><strong>💡 Learn something</strong><span>Understand AI, science and technology.</span></button>
+          <button class="suggestion" data-prompt="Help me build a project. Ask what I want to create."><strong>💻 Build something</strong><span>Write, debug and understand code.</span></button>
+        </div>
+      </section>
+      <section id="chat-history" class="chat-history" aria-live="polite"></section>
+      <div class="composer-area">
+        <h2>Chat with me here</h2>
+        <div class="composer">
+          <textarea id="message-input" rows="1" placeholder="Ask me anything..."></textarea>
+          <button id="mic-button" class="mic-button" title="Record voice" aria-label="Record voice">🎙</button>
+          <button id="send-button" class="send-button" title="Send message" aria-label="Send message">➤</button>
+        </div>
+        <div id="status-line" class="status-line">NOVA is ready when you are.</div>
+      </div>
+    </main>
+  </div>
+  <div id="settings-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal-card"><button id="close-settings" class="modal-close" aria-label="Close">×</button><h2 id="settings-title">Connect NOVA AI</h2><p>Enter your deployed backend URL once. It will be saved in this browser.</p><label for="api-url">Backend URL</label><input id="api-url" placeholder="https://your-api.example.com" /><button id="save-settings" class="gradient-button">Save connection</button></div>
+  </div>
+  <button id="settings-button" class="settings-fab" title="Backend settings">⚙</button>
+  <script src="script.js"></script>
+</body>
+</html>
