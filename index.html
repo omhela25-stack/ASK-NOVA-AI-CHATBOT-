@@ -1,1 +1,93 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA AI | Your Intelligent Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <span>NOVA AI</span>
+      </div>
+
+      <button class="new-chat" id="newChat">+ New Chat</button>
+
+      <div class="sidebar-label">YOUR SPACE</div>
+      <div class="history" id="history">
+        <p>No conversations yet</p>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="profile">
+          <div class="avatar">N</div>
+          <div>
+            <strong>NOVA AI</strong>
+            <small>Personal Assistant</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton">☰</button>
+        <span class="model-name">NOVA AI <span class="version">BETA</span></span>
+        <span class="status"><i></i> Online</span>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-logo">✦</div>
+          <h1>Welcome to <span>NOVA AI</span></h1>
+          <p>Your ideas. Your questions. One intelligent assistant.</p>
+
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain artificial intelligence">
+              <span>✧</span>
+              <strong>Learn something</strong>
+              <small>Explain a complex topic</small>
+            </button>
+
+            <button class="suggestion" data-prompt="Help me write Python code">
+              <span>⌘</span>
+              <strong>Write code</strong>
+              <small>Build and debug projects</small>
+            </button>
+
+            <button class="suggestion" data-prompt="Give me creative project ideas">
+              <span>✳</span>
+              <strong>Get creative</strong>
+              <small>Explore new possibilities</small>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <footer class="composer-area">
+        <form class="composer" id="chatForm">
+          <textarea
+            id="messageInput"
+            placeholder="Message NOVA AI..."
+            rows="1"
+          ></textarea>
+          <button type="submit" id="sendButton" aria-label="Send message">
+            ↑
+          </button>
+        </form>
+        <p class="disclaimer">NOVA AI can make mistakes. Verify important information.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
